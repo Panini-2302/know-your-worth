@@ -1,4 +1,3 @@
-
 import Header from '@/components/Header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -179,7 +178,6 @@ const Dashboard = () => {
                     </h4>
                     <p className="text-xs text-gray-600">{event.date}</p>
                     <Badge 
-                      size="sm" 
                       className={`mt-1 ${event.impact === 'High' ? 'bg-sky-coral' : 'bg-lemon-cream text-charcoal-black'}`}
                     >
                       {event.impact} Impact

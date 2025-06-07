@@ -1,4 +1,3 @@
-
 import Header from '@/components/Header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -176,7 +175,7 @@ const Learn = () => {
                           {module.duration}
                         </span>
                         <span>{module.lessons} lessons</span>
-                        <Badge variant="outline" size="sm">
+                        <Badge variant="outline">
                           {module.difficulty}
                         </Badge>
                       </div>
@@ -256,7 +255,7 @@ const Learn = () => {
                       <h4 className="font-lato font-semibold text-sm text-charcoal-black">
                         {tip.title}
                       </h4>
-                      <Badge size="sm" variant="outline">
+                      <Badge variant="outline">
                         {tip.category}
                       </Badge>
                     </div>
