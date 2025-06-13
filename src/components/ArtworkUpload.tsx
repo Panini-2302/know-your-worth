@@ -71,7 +71,7 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
       <CardContent className="p-6">
         <div className="space-y-6">
           <div className="text-center">
-            <h3 className="text-xl font-playfair font-semibold text-charcoal-black mb-2">
+            <h3 className="text-xl font-playfair font-semibold text-graphite-soft mb-2">
               Upload Your Artwork
             </h3>
             <p className="text-gray-600 font-lato">
@@ -82,7 +82,7 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
           {/* Image Upload Area */}
           <div
             className={`relative border-2 border-dashed rounded-xl p-8 transition-all duration-300 cursor-pointer
-              ${isDragOver ? 'border-sky-coral bg-sky-coral/5' : 'border-gray-300 hover:border-sky-coral hover:bg-gray-50'}
+              ${isDragOver ? 'border-blush-rose bg-blush-rose/5' : 'border-gray-300 hover:border-blush-rose hover:bg-gray-50'}
               ${isUploaded ? 'border-green-500 bg-green-50' : ''}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -102,7 +102,7 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
               </div>
             ) : (
               <div className="text-center">
-                <div className="mx-auto w-12 h-12 bg-gradient-to-br from-sky-coral to-lemon-cream rounded-full flex items-center justify-center mb-4">
+                <div className="mx-auto w-12 h-12 bg-gradient-to-br from-blush-rose to-periwinkle-blue rounded-full flex items-center justify-center mb-4">
                   {isUploaded ? <CheckCircle className="text-white" size={24} /> : <Upload className="text-white" size={24} />}
                 </div>
                 <p className="text-lg font-lato font-medium text-gray-700 mb-2">
@@ -134,14 +134,14 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
                 placeholder="Enter artwork title"
                 value={artwork.title}
                 onChange={(e) => handleInputChange('title', e.target.value)}
-                className="border-gray-300 focus:border-sky-coral"
+                className="border-gray-300 focus:border-blush-rose"
               />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="style" className="font-lato font-medium">Art Style</Label>
               <Select onValueChange={(value) => handleInputChange('style', value)}>
-                <SelectTrigger className="border-gray-300 focus:border-sky-coral">
+                <SelectTrigger className="border-gray-300 focus:border-blush-rose">
                   <SelectValue placeholder="Select style" />
                 </SelectTrigger>
                 <SelectContent>
@@ -164,7 +164,7 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
               placeholder="Describe your artwork, inspiration, or technique..."
               value={artwork.description}
               onChange={(e) => handleInputChange('description', e.target.value)}
-              className="border-gray-300 focus:border-sky-coral min-h-[100px]"
+              className="border-gray-300 focus:border-blush-rose min-h-[100px]"
             />
           </div>
         </div>

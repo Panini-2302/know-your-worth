@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X, Upload, BarChart3, User, BookOpen } from 'lucide-react';
+import { Menu, X, Upload, BarChart3, User, BookOpen, Gem } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,10 +20,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate('/')}>
-            <div className="w-8 h-8 bg-gradient-to-br from-sky-coral to-lemon-cream rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AV</span>
+            <div className="w-8 h-8 bg-gradient-to-br from-blush-rose to-periwinkle-blue rounded-lg flex items-center justify-center relative">
+              <Gem className="text-graphite-soft" size={16} />
+              <div className="absolute inset-0 bg-gradient-to-br from-blush-rose/30 to-mint-gray/30 rounded-lg blur-sm"></div>
             </div>
-            <span className="font-playfair font-bold text-xl text-charcoal-black">ArtValue Pro</span>
+            <span className="font-playfair font-bold text-xl text-graphite-soft">Know Your Worth</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -32,7 +33,7 @@ const Header = () => {
               <button
                 key={item.path}
                 onClick={() => navigate(item.path)}
-                className="flex items-center space-x-2 text-gray-600 hover:text-sky-coral transition-colors duration-200"
+                className="flex items-center space-x-2 text-gray-600 hover:text-blush-rose transition-colors duration-200"
               >
                 <item.icon size={18} />
                 <span className="font-lato font-medium">{item.label}</span>
@@ -41,10 +42,10 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-sky-coral text-sky-coral hover:bg-sky-coral hover:text-white">
+            <Button variant="outline" className="border-blush-rose text-blush-rose hover:bg-blush-rose hover:text-white">
               Sign In
             </Button>
-            <Button className="bg-sky-coral hover:bg-sky-coral/90">
+            <Button className="bg-blush-rose hover:bg-blush-rose/90">
               Get Started
             </Button>
           </div>
@@ -52,7 +53,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-sky-coral hover:bg-gray-100"
+            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-blush-rose hover:bg-gray-100"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -69,17 +70,17 @@ const Header = () => {
                     navigate(item.path);
                     setIsMenuOpen(false);
                   }}
-                  className="flex items-center space-x-3 px-4 py-2 text-gray-600 hover:text-sky-coral hover:bg-gray-50 rounded-lg transition-colors"
+                  className="flex items-center space-x-3 px-4 py-2 text-gray-600 hover:text-blush-rose hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   <item.icon size={20} />
                   <span className="font-lato font-medium">{item.label}</span>
                 </button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 px-4">
-                <Button variant="outline" className="border-sky-coral text-sky-coral hover:bg-sky-coral hover:text-white w-full">
+                <Button variant="outline" className="border-blush-rose text-blush-rose hover:bg-blush-rose hover:text-white w-full">
                   Sign In
                 </Button>
-                <Button className="bg-sky-coral hover:bg-sky-coral/90 w-full">
+                <Button className="bg-blush-rose hover:bg-blush-rose/90 w-full">
                   Get Started
                 </Button>
               </div>

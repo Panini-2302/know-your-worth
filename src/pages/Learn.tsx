@@ -3,173 +3,153 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { BookOpen, Award, Clock, CheckCircle, Play, Star } from 'lucide-react';
+import { 
+  BookOpen, 
+  Award, 
+  Clock, 
+  Users, 
+  Star, 
+  Play, 
+  CheckCircle, 
+  Lightbulb,
+  Target,
+  TrendingUp,
+  DollarSign
+} from 'lucide-react';
 
 const Learn = () => {
   const modules = [
     {
       id: 1,
-      title: "Pricing Fundamentals",
-      description: "Learn the basics of art pricing and market dynamics",
-      duration: "15 min",
-      lessons: 4,
-      progress: 100,
-      badge: "completed",
-      difficulty: "Beginner"
+      title: 'Pricing Fundamentals',
+      description: 'Learn the basics of art valuation and pricing strategies',
+      duration: '45 min',
+      lessons: 8,
+      difficulty: 'Beginner',
+      progress: 75,
+      icon: DollarSign,
+      completed: false
     },
     {
       id: 2,
-      title: "Understanding Your Market",
-      description: "Identify your target audience and market positioning",
-      duration: "20 min",
-      lessons: 5,
-      progress: 75,
-      badge: "in-progress",
-      difficulty: "Beginner"
+      title: 'Market Analysis',
+      description: 'Understanding trends and market dynamics',
+      duration: '1h 15min',
+      lessons: 12,
+      difficulty: 'Intermediate',
+      progress: 30,
+      icon: TrendingUp,
+      completed: false
     },
     {
       id: 3,
-      title: "Client Communication",
-      description: "Master the art of client negotiations and relationship building",
-      duration: "25 min",
-      lessons: 6,
-      progress: 30,
-      badge: "in-progress",
-      difficulty: "Intermediate"
-    },
-    {
-      id: 4,
-      title: "Licensing & Rights",
-      description: "Understand different licensing models and protect your work",
-      duration: "30 min",
-      lessons: 7,
+      title: 'Client Communication',
+      description: 'Master the art of client relations and negotiations',
+      duration: '55 min',
+      lessons: 10,
+      difficulty: 'Advanced',
       progress: 0,
-      badge: "locked",
-      difficulty: "Advanced"
-    },
-    {
-      id: 5,
-      title: "Digital Marketing for Artists",
-      description: "Promote your work effectively across digital platforms",
-      duration: "35 min",
-      lessons: 8,
-      progress: 0,
-      badge: "locked",
-      difficulty: "Intermediate"
-    },
-    {
-      id: 6,
-      title: "Portfolio Optimization",
-      description: "Build a portfolio that converts viewers into buyers",
-      duration: "28 min",
-      lessons: 6,
-      progress: 0,
-      badge: "locked",
-      difficulty: "Intermediate"
+      icon: Users,
+      completed: false
     }
   ];
 
   const achievements = [
-    { icon: Star, title: "First Steps", description: "Completed your first module", earned: true },
-    { icon: Award, title: "Quick Learner", description: "Finished 3 modules in a week", earned: true },
-    { icon: BookOpen, title: "Scholar", description: "Read all pricing guides", earned: false },
-    { icon: CheckCircle, title: "Master", description: "Completed all modules", earned: false }
+    { name: 'First Valuation', icon: Star, earned: true, description: 'Complete your first artwork pricing' },
+    { name: 'Market Analyst', icon: TrendingUp, earned: true, description: 'Study 10 market trend reports' },
+    { name: 'Pricing Pro', icon: Award, earned: false, description: 'Price 50 artworks successfully' },
+    { name: 'Community Helper', icon: Users, earned: false, description: 'Help 5 fellow artists' }
   ];
 
   const quickTips = [
     {
-      title: "Price with Confidence",
-      tip: "Factor in your time, materials, skill level, and market demand when pricing artwork.",
-      category: "Pricing"
+      title: 'Research Your Market',
+      content: 'Study similar artists and their pricing to understand your position',
+      category: 'Strategy'
     },
     {
-      title: "Build Relationships",
-      tip: "Long-term client relationships are more valuable than one-time sales.",
-      category: "Client Relations"
+      title: 'Document Your Process',
+      content: 'Keep detailed records of time spent and materials used',
+      category: 'Organization'
     },
     {
-      title: "Document Everything",
-      tip: "Keep detailed records of your pricing decisions and their outcomes.",
-      category: "Business"
+      title: 'Factor in Your Experience',
+      content: 'More experienced artists can command higher prices',
+      category: 'Pricing'
     },
     {
-      title: "Stay Market-Aware",
-      tip: "Regularly research what similar artists in your style and skill level are charging.",
-      category: "Research"
+      title: 'Consider the Venue',
+      content: 'Gallery sales vs online sales may have different pricing strategies',
+      category: 'Sales'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-mist-blue via-white to-lemon-cream/30">
+    <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-playfair font-bold text-charcoal-black mb-2">
-            Art Business Academy
+          <h1 className="text-3xl font-playfair font-bold text-graphite-soft mb-2">
+            Learn & Grow
           </h1>
-          <p className="text-gray-600 font-lato">Master the business side of art with our comprehensive guides</p>
+          <p className="text-gray-600 font-lato">Master the art of pricing and grow your artistic business</p>
         </div>
 
         {/* Progress Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card className="hover-lift">
-            <CardContent className="p-6 text-center">
-              <BookOpen className="text-sky-coral mx-auto mb-3" size={32} />
-              <div className="text-2xl font-playfair font-bold text-charcoal-black mb-1">6</div>
-              <p className="text-sm font-lato text-gray-600">Total Modules</p>
-            </CardContent>
-          </Card>
-          <Card className="hover-lift">
-            <CardContent className="p-6 text-center">
-              <CheckCircle className="text-green-600 mx-auto mb-3" size={32} />
-              <div className="text-2xl font-playfair font-bold text-charcoal-black mb-1">1</div>
-              <p className="text-sm font-lato text-gray-600">Completed</p>
-            </CardContent>
-          </Card>
-          <Card className="hover-lift">
-            <CardContent className="p-6 text-center">
-              <Clock className="text-lemon-cream mx-auto mb-3" size={32} />
-              <div className="text-2xl font-playfair font-bold text-charcoal-black mb-1">2.5h</div>
-              <p className="text-sm font-lato text-gray-600">Time Invested</p>
-            </CardContent>
-          </Card>
-          <Card className="hover-lift">
-            <CardContent className="p-6 text-center">
-              <Award className="text-purple-600 mx-auto mb-3" size={32} />
-              <div className="text-2xl font-playfair font-bold text-charcoal-black mb-1">2</div>
-              <p className="text-sm font-lato text-gray-600">Badges Earned</p>
-            </CardContent>
-          </Card>
+          {[
+            { icon: BookOpen, label: 'Modules Completed', value: '2/6', progress: 33 },
+            { icon: Award, label: 'Badges Earned', value: '3', progress: 75 },
+            { icon: Clock, label: 'Learning Hours', value: '12.5', progress: 60 },
+            { icon: Target, label: 'Skills Mastered', value: '8/15', progress: 53 }
+          ].map((stat, index) => (
+            <Card key={index} className="hover-lift">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <stat.icon className="text-blush-rose" size={24} />
+                  <span className="text-2xl font-playfair font-bold text-graphite-soft">
+                    {stat.value}
+                  </span>
+                </div>
+                <p className="text-sm font-lato text-gray-600 mb-2">{stat.label}</p>
+                <Progress value={stat.progress} className="h-2" />
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Learning Modules */}
           <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-2xl font-playfair font-bold text-charcoal-black">Learning Modules</h2>
-            
-            {modules.map((module) => (
-              <Card key={module.id} className="hover-lift">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-lg font-playfair font-semibold text-charcoal-black">
-                          {module.title}
-                        </h3>
-                        <Badge 
-                          className={`
-                            ${module.badge === 'completed' ? 'bg-green-500' : 
-                              module.badge === 'in-progress' ? 'bg-lemon-cream text-charcoal-black' : 
-                              'bg-gray-400'}
-                          `}
-                        >
-                          {module.badge === 'completed' ? 'Completed' : 
-                           module.badge === 'in-progress' ? 'In Progress' : 'Locked'}
-                        </Badge>
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-playfair flex items-center gap-2">
+                  <BookOpen className="text-blush-rose" size={20} />
+                  Learning Modules
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {modules.map((module) => (
+                    <div key={module.id} className="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-periwinkle-blue rounded-lg flex items-center justify-center">
+                            <module.icon className="text-blush-rose" size={20} />
+                          </div>
+                          <div>
+                            <h3 className="font-lato font-semibold text-graphite-soft">{module.title}</h3>
+                            <p className="text-sm text-gray-600">{module.description}</p>
+                          </div>
+                        </div>
+                        <Button size="sm" className="bg-blush-rose hover:bg-blush-rose/90">
+                          <Play size={16} className="mr-1" />
+                          Continue
+                        </Button>
                       </div>
-                      <p className="text-gray-600 font-lato mb-3">{module.description}</p>
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                      
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
                         <span className="flex items-center gap-1">
                           <Clock size={14} />
                           {module.duration}
@@ -179,89 +159,122 @@ const Learn = () => {
                           {module.difficulty}
                         </Badge>
                       </div>
-                    </div>
-                    <Button 
-                      className={`
-                        ${module.badge === 'locked' ? 'bg-gray-400 cursor-not-allowed' : 
-                          'bg-sky-coral hover:bg-sky-coral/90'}
-                      `}
-                      disabled={module.badge === 'locked'}
-                    >
-                      {module.badge === 'completed' ? 'Review' : 
-                       module.badge === 'in-progress' ? 'Continue' : 'Start'}
-                      <Play size={16} className="ml-2" />
-                    </Button>
-                  </div>
-                  
-                  {module.progress > 0 && (
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="font-lato text-gray-600">Progress</span>
-                        <span className="font-lato font-medium">{module.progress}%</span>
+                      
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Progress</span>
+                          <span className="font-medium text-graphite-soft">{module.progress}%</span>
+                        </div>
+                        <Progress value={module.progress} className="h-2" />
                       </div>
-                      <Progress value={module.progress} className="h-2" />
                     </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Quick Tips */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-playfair flex items-center gap-2">
+                  <Lightbulb className="text-blush-rose" size={20} />
+                  Quick Tips
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {quickTips.map((tip, index) => (
+                    <div key={index} className="bg-mint-gray/30 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-lato font-semibold text-sm text-graphite-soft">
+                          {tip.title}
+                        </h4>
+                        <Badge variant="outline">
+                          {tip.category}
+                        </Badge>
+                      </div>
+                      <p className="text-sm text-gray-600">{tip.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Achievements */}
-            <Card className="hover-lift">
+            <Card>
               <CardHeader>
                 <CardTitle className="font-playfair flex items-center gap-2">
-                  <Award className="text-sky-coral" size={20} />
-                  Your Achievements
+                  <Award className="text-blush-rose" size={20} />
+                  Achievements
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {achievements.map((achievement, index) => (
-                  <div 
-                    key={index} 
-                    className={`flex items-center gap-3 p-3 rounded-lg ${
-                      achievement.earned ? 'bg-green-50 border border-green-200' : 'bg-gray-50'
-                    }`}
-                  >
-                    <achievement.icon 
-                      className={achievement.earned ? 'text-green-600' : 'text-gray-400'} 
-                      size={24} 
-                    />
-                    <div className="flex-1">
-                      <h4 className="font-lato font-semibold text-sm text-charcoal-black">
-                        {achievement.title}
-                      </h4>
-                      <p className="text-xs text-gray-600">{achievement.description}</p>
+              <CardContent>
+                <div className="space-y-3">
+                  {achievements.map((achievement, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                        achievement.earned ? 'bg-blush-rose text-white' : 'bg-gray-300 text-gray-500'
+                      }`}>
+                        {achievement.earned ? (
+                          <CheckCircle size={16} />
+                        ) : (
+                          <achievement.icon size={16} />
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-lato font-semibold text-sm text-graphite-soft">
+                          {achievement.name}
+                        </h4>
+                        <p className="text-xs text-gray-600">{achievement.description}</p>
+                      </div>
                     </div>
-                    {achievement.earned && (
-                      <CheckCircle className="text-green-600" size={16} />
-                    )}
-                  </div>
-                ))}
+                  ))}
+                </div>
               </CardContent>
             </Card>
 
-            {/* Quick Tips */}
-            <Card className="hover-lift">
+            {/* Learning Stats */}
+            <Card>
               <CardHeader>
-                <CardTitle className="font-playfair">💡 Quick Tips</CardTitle>
+                <CardTitle className="font-playfair text-sm">This Week</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {quickTips.map((tip, index) => (
-                  <div key={index} className="border-l-4 border-sky-coral pl-4 py-2">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h4 className="font-lato font-semibold text-sm text-charcoal-black">
-                        {tip.title}
-                      </h4>
-                      <Badge variant="outline">
-                        {tip.category}
-                      </Badge>
-                    </div>
-                    <p className="text-xs text-gray-600 font-lato">{tip.tip}</p>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-lato text-gray-600">Lessons Completed</span>
+                    <span className="font-semibold text-graphite-soft">8</span>
                   </div>
-                ))}
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-lato text-gray-600">Study Time</span>
+                    <span className="font-semibold text-graphite-soft">3.5h</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-lato text-gray-600">Streak</span>
+                    <span className="font-semibold text-blush-rose">5 days</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Community */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-playfair flex items-center gap-2">
+                  <Users className="text-blush-rose" size={20} />
+                  Community
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center">
+                  <div className="text-2xl font-playfair font-bold text-graphite-soft mb-1">1,247</div>
+                  <div className="text-sm font-lato text-gray-600 mb-4">Active Learners</div>
+                  <Button variant="outline" className="w-full border-blush-rose text-blush-rose hover:bg-blush-rose hover:text-white">
+                    Join Discussion
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 248 250 252;
-    --foreground: 46 46 46;
+    --background: 255 244 224;
+    --foreground: 58 58 58;
 
-    --card: 255 255 255;
-    --card-foreground: 46 46 46;
+    --card: 221 235 249;
+    --card-foreground: 58 58 58;
 
     --popover: 255 255 255;
-    --popover-foreground: 46 46 46;
+    --popover-foreground: 58 58 58;
 
-    --primary: 255 107 107;
-    --primary-foreground: 255 255 255;
+    --primary: 249 213 211;
+    --primary-foreground: 58 58 58;
 
-    --secondary: 226 240 247;
-    --secondary-foreground: 46 46 46;
+    --secondary: 216 243 220;
+    --secondary-foreground: 58 58 58;
 
     --muted: 241 245 249;
     --muted-foreground: 100 116 139;
 
-    --accent: 255 230 109;
-    --accent-foreground: 46 46 46;
+    --accent: 221 235 249;
+    --accent-foreground: 58 58 58;
 
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
 
     --border: 226 232 240;
     --input: 226 232 240;
-    --ring: 255 107 107;
+    --ring: 249 213 211;
 
     --radius: 0.75rem;
   }
@@ -55,7 +55,7 @@
 
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, #E2F0F7 0%, #FFE66D 50%, #FF6B6B 100%);
+    background: linear-gradient(135deg, #FFF4E0 0%, #F9D5D3 50%, #DDEBF9 100%);
   }
   
   .glass-card {
@@ -67,6 +67,6 @@
   }
   
   .price-pulse {
-    @apply animate-pulse-value text-sky-coral font-bold;
+    @apply animate-pulse-value text-blush-rose font-bold;
   }
 }

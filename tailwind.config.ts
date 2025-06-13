@@ -63,11 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom ArtValue Pro colors
-				'sky-coral': '#FF6B6B',
-				'lemon-cream': '#FFE66D',
-				'mist-blue': '#E2F0F7',
-				'charcoal-black': '#2E2E2E'
+				// Custom Know Your Worth colors
+				'blush-rose': '#F9D5D3',
+				'mint-gray': '#D8F3DC',
+				'periwinkle-blue': '#DDEBF9',
+				'cream-beige': '#FFF4E0',
+				'graphite-soft': '#3A3A3A'
 			},
 			fontFamily: {
 				'playfair': ['Playfair Display', 'serif'],
