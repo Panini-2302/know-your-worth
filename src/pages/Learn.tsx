@@ -93,7 +93,7 @@ const Learn = () => {
           <h1 className="text-3xl font-playfair font-bold text-graphite-soft mb-2">
             Learn & Grow
           </h1>
-          <p className="text-gray-600 font-lato">Master the art of pricing and grow your artistic business</p>
+          <p className="text-graphite-soft font-lato">Master the art of pricing and grow your artistic business</p>
         </div>
 
         {/* Progress Overview */}
@@ -112,7 +112,7 @@ const Learn = () => {
                     {stat.value}
                   </span>
                 </div>
-                <p className="text-sm font-lato text-gray-600 mb-2">{stat.label}</p>
+                <p className="text-sm font-lato text-graphite-soft mb-2">{stat.label}</p>
                 <Progress value={stat.progress} className="h-2" />
               </CardContent>
             </Card>
@@ -228,7 +228,7 @@ const Learn = () => {
                         <h4 className="font-lato font-semibold text-sm text-graphite-soft">
                           {achievement.name}
                         </h4>
-                        <p className="text-xs text-gray-600">{achievement.description}</p>
+                        <p className="text-xs text-graphite-soft">{achievement.description}</p>
                       </div>
                     </div>
                   ))}
@@ -244,15 +244,15 @@ const Learn = () => {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-lato text-gray-600">Lessons Completed</span>
+                    <span className="text-sm font-lato text-graphite-soft">Lessons Completed</span>
                     <span className="font-semibold text-graphite-soft">8</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-lato text-gray-600">Study Time</span>
+                    <span className="text-sm font-lato text-graphite-soft">Study Time</span>
                     <span className="font-semibold text-graphite-soft">3.5h</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-lato text-gray-600">Streak</span>
+                    <span className="text-sm font-lato text-graphite-soft">Streak</span>
                     <span className="font-semibold text-blush-rose">5 days</span>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ const Learn = () => {
               <CardContent>
                 <div className="text-center">
                   <div className="text-2xl font-playfair font-bold text-graphite-soft mb-1">1,247</div>
-                  <div className="text-sm font-lato text-gray-600 mb-4">Active Learners</div>
+                  <div className="text-sm font-lato text-graphite-soft mb-4">Active Learners</div>
                   <Button variant="outline" className="w-full border-blush-rose text-blush-rose hover:bg-blush-rose hover:text-white">
                     Join Discussion
                   </Button>

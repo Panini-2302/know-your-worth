@@ -65,20 +65,20 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-mist-blue via-white to-lemon-cream/30">
+    <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Artist Header */}
         <div className="bg-white rounded-2xl p-8 mb-8 hover-lift">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div className="w-24 h-24 bg-gradient-to-br from-sky-coral to-lemon-cream rounded-full flex items-center justify-center text-white text-2xl font-playfair font-bold">
+            <div className="w-24 h-24 bg-gradient-to-br from-blush-rose to-blush-rose rounded-full flex items-center justify-center text-white text-2xl font-playfair font-bold">
               AR
             </div>
             
             <div className="flex-1">
               <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                <h1 className="text-3xl font-playfair font-bold text-charcoal-black">
+                <h1 className="text-3xl font-playfair font-bold text-graphite-soft">
                   {portfolioData.artist.name}
                 </h1>
                 <div className="flex gap-2">
@@ -86,26 +86,26 @@ const Portfolio = () => {
                     <Share2 size={16} className="mr-2" />
                     Share Portfolio
                   </Button>
-                  <Button size="sm" className="bg-sky-coral hover:bg-sky-coral/90">
+                  <Button size="sm" className="bg-blush-rose hover:bg-blush-rose/90">
                     <Edit size={16} className="mr-2" />
                     Edit Profile
                   </Button>
                 </div>
               </div>
               
-              <p className="text-gray-600 font-lato mb-4 max-w-2xl">
+              <p className="text-graphite-soft font-lato mb-4 max-w-2xl">
                 {portfolioData.artist.bio}
               </p>
               
               <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="bg-mist-blue text-charcoal-black">
+                <Badge variant="secondary" className="bg-periwinkle-blue text-graphite-soft">
                   📍 {portfolioData.artist.location}
                 </Badge>
-                <Badge variant="secondary" className="bg-lemon-cream text-charcoal-black">
+                <Badge variant="secondary" className="bg-blush-rose text-graphite-soft">
                   🎨 {portfolioData.artist.experience}
                 </Badge>
                 {portfolioData.artist.specialties.map((specialty, index) => (
-                  <Badge key={index} variant="outline" className="border-sky-coral text-sky-coral">
+                  <Badge key={index} variant="outline" className="border-blush-rose text-blush-rose">
                     {specialty}
                   </Badge>
                 ))}
@@ -120,15 +120,15 @@ const Portfolio = () => {
             { icon: DollarSign, label: 'Total Earnings', value: '$12,400', color: 'text-green-600' },
             { icon: Eye, label: 'Total Views', value: '8.3K', color: 'text-blue-600' },
             { icon: Heart, label: 'Total Likes', value: '435', color: 'text-pink-600' },
-            { icon: ExternalLink, label: 'Artworks', value: '24', color: 'text-sky-coral' }
+            { icon: ExternalLink, label: 'Artworks', value: '24', color: 'text-blush-rose' }
           ].map((stat, index) => (
             <Card key={index} className="hover-lift">
               <CardContent className="p-6 text-center">
                 <stat.icon className={`${stat.color} mx-auto mb-3`} size={32} />
-                <div className="text-2xl font-playfair font-bold text-charcoal-black mb-1">
+                <div className="text-2xl font-playfair font-bold text-graphite-soft mb-1">
                   {stat.value}
                 </div>
-                <p className="text-sm font-lato text-gray-600">{stat.label}</p>
+                <p className="text-sm font-lato text-graphite-soft">{stat.label}</p>
               </CardContent>
             </Card>
           ))}
@@ -137,10 +137,10 @@ const Portfolio = () => {
         {/* Artworks Grid */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-playfair font-bold text-charcoal-black">
+            <h2 className="text-2xl font-playfair font-bold text-graphite-soft">
               Featured Artworks
             </h2>
-            <Button variant="outline" className="border-sky-coral text-sky-coral hover:bg-sky-coral hover:text-white">
+            <Button variant="outline" className="border-blush-rose text-blush-rose hover:bg-blush-rose hover:text-white">
               <Download size={16} className="mr-2" />
               Export Portfolio
             </Button>
@@ -168,7 +168,7 @@ const Portfolio = () => {
                   <Badge 
                     className={`absolute top-2 right-2 ${
                       artwork.status === 'Sold' ? 'bg-red-500' : 
-                      artwork.status === 'Commission' ? 'bg-lemon-cream text-charcoal-black' : 
+                      artwork.status === 'Commission' ? 'bg-blush-rose text-graphite-soft' : 
                       'bg-green-500'
                     }`}
                   >
@@ -177,15 +177,15 @@ const Portfolio = () => {
                 </div>
                 
                 <CardContent className="p-4">
-                  <h3 className="font-playfair font-semibold text-charcoal-black mb-1">
+                  <h3 className="font-playfair font-semibold text-graphite-soft mb-1">
                     {artwork.title}
                   </h3>
-                  <p className="text-sm text-gray-600 font-lato mb-2">{artwork.style}</p>
+                  <p className="text-sm text-graphite-soft font-lato mb-2">{artwork.style}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-lato font-bold text-sky-coral">
+                    <span className="text-lg font-lato font-bold text-blush-rose">
                       {artwork.price}
                     </span>
-                    <div className="flex items-center gap-3 text-sm text-gray-500">
+                    <div className="flex items-center gap-3 text-sm text-graphite-soft">
                       <div className="flex items-center gap-1">
                         <Eye size={12} />
                         {artwork.views}
@@ -203,7 +203,7 @@ const Portfolio = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-sky-coral to-lemon-cream rounded-2xl p-8 text-center text-white">
+        <div className="bg-gradient-to-r from-blush-rose to-blush-rose rounded-2xl p-8 text-center text-white">
           <h2 className="text-3xl font-playfair font-bold mb-4">
             Interested in My Work?
           </h2>
@@ -213,14 +213,14 @@ const Portfolio = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white text-sky-coral hover:bg-gray-100 font-lato font-semibold"
+              className="bg-white text-blush-rose hover:bg-gray-100 font-lato font-semibold"
             >
               Commission Artwork
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-sky-coral font-lato font-semibold"
+              className="border-white text-white hover:bg-white hover:text-blush-rose font-lato font-semibold"
             >
               Hire Me
             </Button>
