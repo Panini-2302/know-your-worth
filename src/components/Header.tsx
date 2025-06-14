@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X, Upload, BarChart3, User, BookOpen, Gem } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -43,10 +42,10 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-blush-rose text-blush-rose hover:bg-blush-rose text-slate-800 bg-sky-50">
+            <Button variant="outline" className="bg-sky-50 text-slate-950">
               Sign In
             </Button>
-            <Button className="bg-sky-50 hover:bg-sky-100 text-slate-800">
+            <Button className="bg-sky-50 text-slate-950">
               Get Started
             </Button>
           </div>
