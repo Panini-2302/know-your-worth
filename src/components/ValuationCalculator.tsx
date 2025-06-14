@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -7,7 +6,6 @@ import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { DollarSign, Clock, Palette, TrendingUp } from 'lucide-react';
-
 interface ValuationData {
   hours: number;
   hourlyRate: number;
@@ -18,12 +16,12 @@ interface ValuationData {
   saleIntent: string;
   revisions: number;
 }
-
 interface ValuationCalculatorProps {
   onValuationChange: (valuation: any) => void;
 }
-
-const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) => {
+const ValuationCalculator = ({
+  onValuationChange
+}: ValuationCalculatorProps) => {
   const [valuation, setValuation] = useState<ValuationData>({
     hours: 10,
     hourlyRate: 25,
@@ -34,34 +32,33 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
     saleIntent: 'original',
     revisions: 2
   });
-
   const [calculatedPrice, setCalculatedPrice] = useState(0);
-
   const calculatePrice = () => {
     const laborCost = valuation.hours * valuation.hourlyRate;
     const skillMultiplier = 1 + (valuation.skillLevel - 5) * 0.2;
     const complexityMultiplier = 1 + (valuation.complexity - 5) * 0.15;
     const marketMultiplier = 1 + (valuation.marketDemand - 5) * 0.1;
     const revisionCost = valuation.revisions * valuation.hourlyRate * 0.5;
-    
     let intentMultiplier = 1;
     switch (valuation.saleIntent) {
-      case 'commission': intentMultiplier = 1.3; break;
-      case 'limited': intentMultiplier = 1.5; break;
-      case 'license': intentMultiplier = 0.8; break;
-      default: intentMultiplier = 1;
+      case 'commission':
+        intentMultiplier = 1.3;
+        break;
+      case 'limited':
+        intentMultiplier = 1.5;
+        break;
+      case 'license':
+        intentMultiplier = 0.8;
+        break;
+      default:
+        intentMultiplier = 1;
     }
-
-    const basePrice = (laborCost + valuation.materialCost + revisionCost) * 
-                     skillMultiplier * complexityMultiplier * marketMultiplier * intentMultiplier;
-    
+    const basePrice = (laborCost + valuation.materialCost + revisionCost) * skillMultiplier * complexityMultiplier * marketMultiplier * intentMultiplier;
     return Math.round(basePrice);
   };
-
   useEffect(() => {
     const price = calculatePrice();
     setCalculatedPrice(price);
-    
     const breakdown = {
       laborCost: valuation.hours * valuation.hourlyRate,
       materialCost: valuation.materialCost,
@@ -71,28 +68,29 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
       revisionCost: valuation.revisions * valuation.hourlyRate * 0.5,
       totalPrice: price
     };
-    
-    onValuationChange({ ...valuation, ...breakdown });
+    onValuationChange({
+      ...valuation,
+      ...breakdown
+    });
   }, [valuation, onValuationChange]);
-
   const handleInputChange = (field: keyof ValuationData, value: any) => {
-    setValuation(prev => ({ ...prev, [field]: value }));
+    setValuation(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
-
   const getSkillLevelText = (level: number) => {
     const levels = ['Beginner', 'Amateur', 'Intermediate', 'Advanced', 'Professional', 'Expert', 'Master', 'Virtuoso', 'Legendary', 'Grandmaster'];
     return levels[level - 1] || 'Beginner';
   };
-
-  return (
-    <Card className="overflow-hidden hover-lift">
-      <CardHeader className="bg-gradient-to-r from-blush-rose/30 to-blush-rose/20">
+  return <Card className="overflow-hidden hover-lift">
+      <CardHeader className="bg-gradient-to-r from-blush-rose/30 to-blush-rose/20 bg-sky-50">
         <CardTitle className="flex items-center gap-2 font-playfair">
           <DollarSign className="text-blush-rose" size={24} />
           Smart Valuation Calculator
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-6">
+      <CardContent className="p-6 bg-sky-50">
         <div className="space-y-6">
           {/* Live Price Preview */}
           <div className="text-center bg-gradient-to-br from-blush-rose/10 to-blush-rose/20 rounded-xl p-6">
@@ -113,14 +111,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
                 Hours Spent
               </Label>
               <div className="px-3">
-                <Slider
-                  value={[valuation.hours]}
-                  onValueChange={(value) => handleInputChange('hours', value[0])}
-                  max={100}
-                  min={1}
-                  step={1}
-                  className="w-full"
-                />
+                <Slider value={[valuation.hours]} onValueChange={value => handleInputChange('hours', value[0])} max={100} min={1} step={1} className="w-full" />
                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                   <span>1hr</span>
                   <span className="font-medium">{valuation.hours}hrs</span>
@@ -131,13 +122,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
 
             <div className="space-y-2">
               <Label htmlFor="hourlyRate" className="font-lato font-medium">Hourly Rate ($)</Label>
-              <Input
-                id="hourlyRate"
-                type="number"
-                value={valuation.hourlyRate}
-                onChange={(e) => handleInputChange('hourlyRate', Number(e.target.value))}
-                className="border-gray-300 focus:border-blush-rose"
-              />
+              <Input id="hourlyRate" type="number" value={valuation.hourlyRate} onChange={e => handleInputChange('hourlyRate', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose" />
             </div>
           </div>
 
@@ -148,25 +133,12 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
                 <Palette size={16} className="text-blush-rose" />
                 Material Cost ($)
               </Label>
-              <Input
-                id="materialCost"
-                type="number"
-                value={valuation.materialCost}
-                onChange={(e) => handleInputChange('materialCost', Number(e.target.value))}
-                className="border-gray-300 focus:border-blush-rose"
-              />
+              <Input id="materialCost" type="number" value={valuation.materialCost} onChange={e => handleInputChange('materialCost', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="revisions" className="font-lato font-medium">Revisions Made</Label>
-              <Input
-                id="revisions"
-                type="number"
-                value={valuation.revisions}
-                onChange={(e) => handleInputChange('revisions', Number(e.target.value))}
-                className="border-gray-300 focus:border-blush-rose"
-                min="0"
-              />
+              <Input id="revisions" type="number" value={valuation.revisions} onChange={e => handleInputChange('revisions', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose" min="0" />
             </div>
           </div>
 
@@ -176,14 +148,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
               Skill Level: <span className="text-blush-rose font-semibold">{getSkillLevelText(valuation.skillLevel)}</span>
             </Label>
             <div className="px-3">
-              <Slider
-                value={[valuation.skillLevel]}
-                onValueChange={(value) => handleInputChange('skillLevel', value[0])}
-                max={10}
-                min={1}
-                step={1}
-                className="w-full"
-              />
+              <Slider value={[valuation.skillLevel]} onValueChange={value => handleInputChange('skillLevel', value[0])} max={10} min={1} step={1} className="w-full" />
               <div className="flex justify-between text-xs text-gray-500 mt-1">
                 <span>Beginner</span>
                 <span>Expert</span>
@@ -194,17 +159,10 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
 
           {/* Complexity & Market */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="space-y-2 bg-sky-50">
               <Label className="font-lato font-medium">Complexity Level</Label>
               <div className="px-3">
-                <Slider
-                  value={[valuation.complexity]}
-                  onValueChange={(value) => handleInputChange('complexity', value[0])}
-                  max={10}
-                  min={1}
-                  step={1}
-                  className="w-full"
-                />
+                <Slider value={[valuation.complexity]} onValueChange={value => handleInputChange('complexity', value[0])} max={10} min={1} step={1} className="w-full" />
                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                   <span>Simple</span>
                   <span className="font-medium">{valuation.complexity}/10</span>
@@ -219,14 +177,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
                 Market Demand
               </Label>
               <div className="px-3">
-                <Slider
-                  value={[valuation.marketDemand]}
-                  onValueChange={(value) => handleInputChange('marketDemand', value[0])}
-                  max={10}
-                  min={1}
-                  step={1}
-                  className="w-full"
-                />
+                <Slider value={[valuation.marketDemand]} onValueChange={value => handleInputChange('marketDemand', value[0])} max={10} min={1} step={1} className="w-full" />
                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                   <span>Low</span>
                   <span className="font-medium">{valuation.marketDemand}/10</span>
@@ -237,9 +188,9 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
           </div>
 
           {/* Sale Intent */}
-          <div className="space-y-2">
+          <div className="space-y-2 bg-sky-50">
             <Label htmlFor="saleIntent" className="font-lato font-medium">Sale Intent</Label>
-            <Select onValueChange={(value) => handleInputChange('saleIntent', value)}>
+            <Select onValueChange={value => handleInputChange('saleIntent', value)}>
               <SelectTrigger className="border-gray-300 focus:border-blush-rose">
                 <SelectValue placeholder="Select sale intent" />
               </SelectTrigger>
@@ -253,8 +204,6 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
           </div>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>;
 };
-
 export default ValuationCalculator;
