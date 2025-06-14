@@ -86,21 +86,21 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
 
   return (
     <Card className="overflow-hidden hover-lift">
-      <CardHeader className="bg-gradient-to-r from-mist-blue to-lemon-cream/30">
+      <CardHeader className="bg-gradient-to-r from-blush-rose/30 to-blush-rose/20">
         <CardTitle className="flex items-center gap-2 font-playfair">
-          <DollarSign className="text-sky-coral" size={24} />
+          <DollarSign className="text-blush-rose" size={24} />
           Smart Valuation Calculator
         </CardTitle>
       </CardHeader>
       <CardContent className="p-6">
         <div className="space-y-6">
           {/* Live Price Preview */}
-          <div className="text-center bg-gradient-to-br from-sky-coral/10 to-lemon-cream/20 rounded-xl p-6">
+          <div className="text-center bg-gradient-to-br from-blush-rose/10 to-blush-rose/20 rounded-xl p-6">
             <p className="text-sm font-lato text-gray-600 mb-1">Estimated Value</p>
-            <div className="text-4xl font-playfair font-bold text-sky-coral price-pulse">
+            <div className="text-4xl font-playfair font-bold text-blush-rose price-pulse">
               ${calculatedPrice.toLocaleString()}
             </div>
-            <Badge variant="secondary" className="mt-2 bg-lemon-cream text-charcoal-black">
+            <Badge variant="secondary" className="mt-2 bg-blush-rose/20 text-graphite-soft">
               Live Preview
             </Badge>
           </div>
@@ -109,7 +109,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label className="flex items-center gap-2 font-lato font-medium">
-                <Clock size={16} className="text-sky-coral" />
+                <Clock size={16} className="text-blush-rose" />
                 Hours Spent
               </Label>
               <div className="px-3">
@@ -136,7 +136,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
                 type="number"
                 value={valuation.hourlyRate}
                 onChange={(e) => handleInputChange('hourlyRate', Number(e.target.value))}
-                className="border-gray-300 focus:border-sky-coral"
+                className="border-gray-300 focus:border-blush-rose"
               />
             </div>
           </div>
@@ -145,7 +145,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="materialCost" className="flex items-center gap-2 font-lato font-medium">
-                <Palette size={16} className="text-sky-coral" />
+                <Palette size={16} className="text-blush-rose" />
                 Material Cost ($)
               </Label>
               <Input
@@ -153,7 +153,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
                 type="number"
                 value={valuation.materialCost}
                 onChange={(e) => handleInputChange('materialCost', Number(e.target.value))}
-                className="border-gray-300 focus:border-sky-coral"
+                className="border-gray-300 focus:border-blush-rose"
               />
             </div>
 
@@ -164,7 +164,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
                 type="number"
                 value={valuation.revisions}
                 onChange={(e) => handleInputChange('revisions', Number(e.target.value))}
-                className="border-gray-300 focus:border-sky-coral"
+                className="border-gray-300 focus:border-blush-rose"
                 min="0"
               />
             </div>
@@ -173,7 +173,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
           {/* Skill Level */}
           <div className="space-y-2">
             <Label className="font-lato font-medium">
-              Skill Level: <span className="text-sky-coral font-semibold">{getSkillLevelText(valuation.skillLevel)}</span>
+              Skill Level: <span className="text-blush-rose font-semibold">{getSkillLevelText(valuation.skillLevel)}</span>
             </Label>
             <div className="px-3">
               <Slider
@@ -215,7 +215,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
 
             <div className="space-y-2">
               <Label className="flex items-center gap-2 font-lato font-medium">
-                <TrendingUp size={16} className="text-sky-coral" />
+                <TrendingUp size={16} className="text-blush-rose" />
                 Market Demand
               </Label>
               <div className="px-3">
@@ -240,7 +240,7 @@ const ValuationCalculator = ({ onValuationChange }: ValuationCalculatorProps) =>
           <div className="space-y-2">
             <Label htmlFor="saleIntent" className="font-lato font-medium">Sale Intent</Label>
             <Select onValueChange={(value) => handleInputChange('saleIntent', value)}>
-              <SelectTrigger className="border-gray-300 focus:border-sky-coral">
+              <SelectTrigger className="border-gray-300 focus:border-blush-rose">
                 <SelectValue placeholder="Select sale intent" />
               </SelectTrigger>
               <SelectContent>
