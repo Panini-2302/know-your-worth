@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X, Upload, BarChart3, User, BookOpen, Gem } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,7 +24,7 @@ const Header = () => {
     path: '/learn'
   }];
   return <header className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[s#FFF4E0_] bg-[#f9d5d3]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-sky-50">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate('/')}>
             <div className="w-8 h-8 bg-gradient-to-br from-blush-rose to-periwinkle-blue rounded-lg flex items-center justify-center relative">
@@ -45,7 +46,7 @@ const Header = () => {
             <Button variant="outline" className="border-blush-rose text-blush-rose hover:bg-blush-rose text-slate-800 bg-sky-50">
               Sign In
             </Button>
-            <Button className="bg-blush-rose hover:bg-blush-rose/90 bg-sky-50">
+            <Button className="bg-sky-50 hover:bg-sky-100 text-slate-800">
               Get Started
             </Button>
           </div>
@@ -67,10 +68,10 @@ const Header = () => {
                   <span className="font-lato font-medium">{item.label}</span>
                 </button>)}
               <div className="flex flex-col space-y-2 pt-4 px-4">
-                <Button variant="outline" className="border-blush-rose text-blush-rose hover:bg-blush-rose hover:text-white w-full">
+                <Button variant="outline" className="border-blush-rose text-blush-rose hover:bg-blush-rose hover:text-white w-full bg-sky-50">
                   Sign In
                 </Button>
-                <Button className="bg-blush-rose hover:bg-blush-rose/90 w-full">
+                <Button className="bg-sky-50 hover:bg-sky-100 text-slate-800 w-full">
                   Get Started
                 </Button>
               </div>
