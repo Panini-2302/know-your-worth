@@ -83,7 +83,7 @@ const ValuationCalculator = ({
     const levels = ['Beginner', 'Amateur', 'Intermediate', 'Advanced', 'Professional', 'Expert', 'Master', 'Virtuoso', 'Legendary', 'Grandmaster'];
     return levels[level - 1] || 'Beginner';
   };
-  return <Card className="overflow-hidden hover-lift">
+  return <Card className="overflow-hidden hover-lift bg-sky-50">
       <CardHeader className="bg-gradient-to-r from-blush-rose/30 to-blush-rose/20 bg-sky-50">
         <CardTitle className="flex items-center gap-2 font-playfair">
           <DollarSign className="text-blush-rose" size={24} />
@@ -93,7 +93,7 @@ const ValuationCalculator = ({
       <CardContent className="p-6 bg-sky-50">
         <div className="bg-background ">
           {/* Live Price Preview */}
-          <div className="text-center bg-gradient-to-br from-blush-rose/10 to-blush-rose/20 rounded-xl p-6">
+          <div className="text-center bg-gradient-to-br from-blush-rose/10 to-blush-rose/20 rounded-xl p-6 bg-sky-50">
             <p className="text-sm font-lato text-gray-600 mb-1">Estimated Value</p>
             <div className="text-4xl font-playfair font-bold text-blush-rose price-pulse">
               ${calculatedPrice.toLocaleString()}
@@ -104,7 +104,7 @@ const ValuationCalculator = ({
           </div>
 
           {/* Time & Labor */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-sky-50">
             <div className="space-y-2 bg-sky-50">
               <Label className="flex items-center gap-2 font-lato font-medium">
                 <Clock size={16} className="text-blush-rose" />
@@ -120,7 +120,7 @@ const ValuationCalculator = ({
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 bg-sky-50">
               <Label htmlFor="hourlyRate" className="font-lato font-medium">Hourly Rate ($)</Label>
               <Input id="hourlyRate" type="number" value={valuation.hourlyRate} onChange={e => handleInputChange('hourlyRate', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose bg-sky-50" />
             </div>
@@ -158,7 +158,7 @@ const ValuationCalculator = ({
           </div>
 
           {/* Complexity & Market */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-red-300">
             <div className="space-y-2 bg-sky-50">
               <Label className="font-lato font-medium">Complexity Level</Label>
               <div className="px-3">
