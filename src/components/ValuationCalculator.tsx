@@ -91,7 +91,7 @@ const ValuationCalculator = ({
         </CardTitle>
       </CardHeader>
       <CardContent className="p-6 bg-sky-50">
-        <div className="space-y-6">
+        <div className="bg-background ">
           {/* Live Price Preview */}
           <div className="text-center bg-gradient-to-br from-blush-rose/10 to-blush-rose/20 rounded-xl p-6">
             <p className="text-sm font-lato text-gray-600 mb-1">Estimated Value</p>
@@ -105,7 +105,7 @@ const ValuationCalculator = ({
 
           {/* Time & Labor */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="space-y-2 bg-sky-50">
               <Label className="flex items-center gap-2 font-lato font-medium">
                 <Clock size={16} className="text-blush-rose" />
                 Hours Spent
@@ -122,7 +122,7 @@ const ValuationCalculator = ({
 
             <div className="space-y-2">
               <Label htmlFor="hourlyRate" className="font-lato font-medium">Hourly Rate ($)</Label>
-              <Input id="hourlyRate" type="number" value={valuation.hourlyRate} onChange={e => handleInputChange('hourlyRate', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose" />
+              <Input id="hourlyRate" type="number" value={valuation.hourlyRate} onChange={e => handleInputChange('hourlyRate', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose bg-sky-50" />
             </div>
           </div>
 
@@ -133,7 +133,7 @@ const ValuationCalculator = ({
                 <Palette size={16} className="text-blush-rose" />
                 Material Cost ($)
               </Label>
-              <Input id="materialCost" type="number" value={valuation.materialCost} onChange={e => handleInputChange('materialCost', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose" />
+              <Input id="materialCost" type="number" value={valuation.materialCost} onChange={e => handleInputChange('materialCost', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose bg-sky-50" />
             </div>
 
             <div className="space-y-2">
@@ -191,7 +191,7 @@ const ValuationCalculator = ({
           <div className="space-y-2 bg-sky-50">
             <Label htmlFor="saleIntent" className="font-lato font-medium">Sale Intent</Label>
             <Select onValueChange={value => handleInputChange('saleIntent', value)}>
-              <SelectTrigger className="border-gray-300 focus:border-blush-rose">
+              <SelectTrigger className="border-gray-300 focus:border-blush-rose text-slate-950 bg-sky-50">
                 <SelectValue placeholder="Select sale intent" />
               </SelectTrigger>
               <SelectContent>
