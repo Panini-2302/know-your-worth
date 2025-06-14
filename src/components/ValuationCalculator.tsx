@@ -138,7 +138,7 @@ const ValuationCalculator = ({
 
             <div className="space-y-2">
               <Label htmlFor="revisions" className="font-lato font-medium">Revisions Made</Label>
-              <Input id="revisions" type="number" value={valuation.revisions} onChange={e => handleInputChange('revisions', Number(e.target.value))} className="border-gray-300 focus:border-blush-rose" min="0" />
+              <Input id="revisions" type="number" value={valuation.revisions} onChange={e => handleInputChange('revisions', Number(e.target.value))} min="0" className="border-gray-300 focus:border-blush-rose bg-sky-50" />
             </div>
           </div>
 
