@@ -74,7 +74,7 @@ const Learn = () => {
     content: 'Gallery sales vs online sales may have different pricing strategies',
     category: 'Sales'
   }];
-  return <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
+  return <div className="min-h-screen from-cream-beige via-white to-periwinkle-blue/30 bg-[t#FFF4E0] bg-[#fff4e0]">
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-[s#FFF4E0] bg-[#fff4e0]">
