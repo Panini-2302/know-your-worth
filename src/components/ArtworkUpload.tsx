@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
 interface ArtworkUploadProps {
   onArtworkChange: (artwork: any) => void;
 }
@@ -107,7 +108,7 @@ const ArtworkUpload = ({
             <div className="space-y-2 bg-sky-50">
               <Label htmlFor="style" className="font-lato font-medium">Art Style</Label>
               <Select onValueChange={value => handleInputChange('style', value)}>
-                <SelectTrigger className="border-gray-300 focus:border-blush-rose">
+                <SelectTrigger className="border-gray-300 focus:border-blush-rose bg-sky-50">
                   <SelectValue placeholder="Select style" />
                 </SelectTrigger>
                 <SelectContent>
