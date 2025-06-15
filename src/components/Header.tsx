@@ -42,12 +42,10 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="bg-sky-50 text-slate-950">
+            <Button variant="outline" className="text-slate-950 bg-sky-50 rounded-none">
               Sign In
             </Button>
-            <Button className="bg-sky-50 text-slate-950">
-              Get Started
-            </Button>
+            
           </div>
 
           {/* Mobile menu button */}
