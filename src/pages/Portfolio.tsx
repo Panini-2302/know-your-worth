@@ -1,10 +1,8 @@
-
 import Header from '@/components/Header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Share2, ExternalLink, Download, Eye, Heart, DollarSign, BarChart3 } from 'lucide-react';
-
 const Portfolio = () => {
   // Mock portfolio data
   const portfolioData = {
@@ -46,14 +44,11 @@ const Portfolio = () => {
       status: "Commission"
     }]
   };
-
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
     // Show toast notification
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
+  return <div className="min-h-screen from-cream-beige via-white to-periwinkle-blue/30 bg-[FFF4E0] bg-[#fff4e0]">
       <Header />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-[#fff4e0]">
@@ -78,27 +73,26 @@ const Portfolio = () => {
         {/* Portfolio Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           {[{
-            icon: DollarSign,
-            label: 'Project Value',
-            value: '$12,400',
-            color: 'text-green-600'
-          }, {
-            icon: Eye,
-            label: 'Total Views',
-            value: '8.3K',
-            color: 'text-blue-600'
-          }, {
-            icon: Heart,
-            label: 'Total Engagement',
-            value: '435',
-            color: 'text-pink-600'
-          }, {
-            icon: BarChart3,
-            label: 'Active Projects',
-            value: '24',
-            color: 'text-blush-rose'
-          }].map((stat, index) => (
-            <Card key={index} className="hover-lift">
+          icon: DollarSign,
+          label: 'Project Value',
+          value: '$12,400',
+          color: 'text-green-600'
+        }, {
+          icon: Eye,
+          label: 'Total Views',
+          value: '8.3K',
+          color: 'text-blue-600'
+        }, {
+          icon: Heart,
+          label: 'Total Engagement',
+          value: '435',
+          color: 'text-pink-600'
+        }, {
+          icon: BarChart3,
+          label: 'Active Projects',
+          value: '24',
+          color: 'text-blush-rose'
+        }].map((stat, index) => <Card key={index} className="hover-lift">
               <CardContent className="p-6 text-center bg-sky-50">
                 <stat.icon className={`${stat.color} mx-auto mb-3`} size={32} />
                 <div className="text-2xl font-playfair font-bold text-graphite-soft mb-1">
@@ -106,8 +100,7 @@ const Portfolio = () => {
                 </div>
                 <p className="text-sm font-lato text-graphite-soft">{stat.label}</p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Artworks Grid */}
@@ -123,14 +116,9 @@ const Portfolio = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {portfolioData.artworks.map(artwork => (
-              <Card key={artwork.id} className="overflow-hidden hover-lift group">
+            {portfolioData.artworks.map(artwork => <Card key={artwork.id} className="overflow-hidden hover-lift group">
                 <div className="relative">
-                  <img 
-                    src={artwork.image} 
-                    alt={artwork.title} 
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" 
-                  />
+                  <img src={artwork.image} alt={artwork.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center gap-2 text-white text-sm">
@@ -141,13 +129,7 @@ const Portfolio = () => {
                       </div>
                     </div>
                   </div>
-                  <Badge className={`absolute top-2 right-2 ${
-                    artwork.status === 'Sold' 
-                      ? 'bg-red-500' 
-                      : artwork.status === 'Commission' 
-                        ? 'bg-blush-rose text-graphite-soft' 
-                        : 'bg-green-500'
-                  }`}>
+                  <Badge className={`absolute top-2 right-2 ${artwork.status === 'Sold' ? 'bg-red-500' : artwork.status === 'Commission' ? 'bg-blush-rose text-graphite-soft' : 'bg-green-500'}`}>
                     {artwork.status}
                   </Badge>
                 </div>
@@ -173,8 +155,7 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
 
@@ -196,8 +177,6 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Portfolio;
