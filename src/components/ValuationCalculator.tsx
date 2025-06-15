@@ -91,7 +91,7 @@ const ValuationCalculator = ({
         </CardTitle>
       </CardHeader>
       <CardContent className="p-6 bg-sky-50">
-        <div className="bg-background ">
+        <div className="bg-sky-50">
           {/* Live Price Preview */}
           <div className="text-center bg-gradient-to-br from-blush-rose/10 to-blush-rose/20 rounded-xl p-6 bg-sky-50">
             <p className="text-sm font-lato text-gray-600 mb-1">Estimated Value</p>
@@ -127,9 +127,9 @@ const ValuationCalculator = ({
           </div>
 
           {/* Materials & Complexity */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-sky-50">
             <div className="space-y-2">
-              <Label htmlFor="materialCost" className="flex items-center gap-2 font-lato font-medium">
+              <Label htmlFor="materialCost" className="flex items-center gap-2 font-lato font-medium bg-sky-50">
                 <Palette size={16} className="text-blush-rose" />
                 Material Cost ($)
               </Label>
@@ -143,7 +143,7 @@ const ValuationCalculator = ({
           </div>
 
           {/* Skill Level */}
-          <div className="space-y-2">
+          <div className="space-y-2 bg-sky-50">
             <Label className="font-lato font-medium">
               Skill Level: <span className="text-blush-rose font-semibold">{getSkillLevelText(valuation.skillLevel)}</span>
             </Label>
@@ -158,7 +158,7 @@ const ValuationCalculator = ({
           </div>
 
           {/* Complexity & Market */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-red-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-sky-50">
             <div className="space-y-2 bg-sky-50">
               <Label className="font-lato font-medium">Complexity Level</Label>
               <div className="px-3">

@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-
 interface ArtworkUploadProps {
   onArtworkChange: (artwork: any) => void;
 }
@@ -64,10 +63,10 @@ const ArtworkUpload = ({
       <CardContent className="p-6 bg-sky-50">
         <div className="space-y-6 bg-sky-50">
           <div className="text-center">
-            <h3 className="text-xl font-playfair font-semibold text-graphite-soft mb-2">
+            <h3 className="text-xl font-playfair font-semibold text-graphite-soft mb-2 text-slate-950">
               Upload Your Artwork
             </h3>
-            <p className="text-gray-600 font-lato">
+            <p className="font-lato text-slate-950">
               Share your creation and get instant valuation
             </p>
           </div>
@@ -101,7 +100,7 @@ const ArtworkUpload = ({
           {/* Artwork Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2 bg-sky-50">
-              <Label htmlFor="title" className="font-lato font-medium">Artwork Title</Label>
+              <Label htmlFor="title" className="font-lato font-medium bg-sky-50">Artwork Title</Label>
               <Input id="title" placeholder="Enter artwork title" value={artwork.title} onChange={e => handleInputChange('title', e.target.value)} className="border-gray-300 focus:border-gray-300 bg-sky-50 rounded" />
             </div>
 
@@ -126,13 +125,7 @@ const ArtworkUpload = ({
 
           <div className="space-y-2">
             <Label htmlFor="description" className="font-lato font-medium">Description</Label>
-            <Textarea 
-              id="description" 
-              placeholder="Describe your artwork, inspiration, or technique..." 
-              value={artwork.description} 
-              onChange={e => handleInputChange('description', e.target.value)} 
-              className="border-gray-300 focus:border-blush-rose min-h-[100px] bg-sky-50" 
-            />
+            <Textarea id="description" placeholder="Describe your artwork, inspiration, or technique..." value={artwork.description} onChange={e => handleInputChange('description', e.target.value)} className="border-gray-300 focus:border-blush-rose min-h-[100px] bg-sky-50" />
           </div>
         </div>
       </CardContent>

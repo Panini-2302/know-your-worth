@@ -15,26 +15,26 @@ const Index = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-playfair font-bold text-graphite-soft mb-6">
+            <h1 className="text-4xl font-playfair font-bold text-graphite-soft mb-6 text-slate-950 md:text-7xl">
               Price Your Art with
               <span className="bg-gradient-to-r from-blush-rose to-periwinkle-blue bg-clip-text text-transparent"> Confidence</span>
             </h1>
-            <p className="text-xl font-lato text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl font-lato max-w-3xl mx-auto mb-8 text-slate-950">
               Get instant, data-driven valuations for your artwork. Upload, analyze, and receive professional 
               pricing recommendations in minutes.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Sparkles className="text-blush-rose" size={20} />
-                <span className="font-lato font-medium">AI-Powered Analysis</span>
+                <span className="font-lato font-medium text-slate-950">AI-Powered Analysis</span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
                 <TrendingUp className="text-mint-gray" size={20} />
-                <span className="font-lato font-medium">Market Insights</span>
+                <span className="font-lato font-medium text-slate-950">Market Insights</span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Users className="text-periwinkle-blue" size={20} />
-                <span className="font-lato font-medium">Trusted by 10k+ Artists</span>
+                <span className="font-lato font-medium text-slate-950">Trusted by 150+ Artists</span>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const Index = () => {
 
       {/* Main Application */}
       <section className="py-8 px-4 sm:px-6 lg:px-8 bg-[#fff4e0]">
-        <div className="max-w-7xl mx-auto bg-[t#FFF4E0] bg-[#fff4e0]">
+        <div className="max-w-7xl mx-auto bg-[t#FFF4E0] bg-sky-50">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Left Column - Upload & Calculator */}
             <div className="space-y-8">
