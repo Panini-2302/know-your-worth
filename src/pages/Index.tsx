@@ -1,14 +1,18 @@
+
 import { useState } from 'react';
 import Header from '@/components/Header';
 import ArtworkUpload from '@/components/ArtworkUpload';
 import ValuationCalculator from '@/components/ValuationCalculator';
 import PricingBreakdown from '@/components/PricingBreakdown';
-import { Sparkles, TrendingUp, Users, Award } from 'lucide-react';
+import { Sparkles, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 const Index = () => {
   const [artwork, setArtwork] = useState(null);
   const [valuation, setValuation] = useState(null);
-  return <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
       <Header />
       
       {/* Hero Section */}
@@ -19,22 +23,22 @@ const Index = () => {
               Price Your Art with
               <span className="bg-gradient-to-r from-blush-rose to-periwinkle-blue bg-clip-text text-transparent"> Confidence</span>
             </h1>
-            <p className="text-xl font-lato max-w-3xl mx-auto mb-8 text-slate-950">
+            <p className="text-xl font-lato max-w-3xl mx-auto mb-12 text-slate-950">
               Get instant, data-driven valuations for your artwork. Upload, analyze, and receive professional 
               pricing recommendations in minutes.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Sparkles className="text-blush-rose" size={20} />
-                <span className="font-lato font-medium text-slate-950">AI-Powered Analysis</span>
+            <div className="flex flex-wrap justify-center gap-6 mb-16">
+              <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-4 rounded-full shadow-lg">
+                <Sparkles className="text-blush-rose" size={24} />
+                <span className="font-lato font-bold text-lg text-slate-950">AI-Powered Analysis</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                <TrendingUp className="text-mint-gray" size={20} />
-                <span className="font-lato font-medium text-slate-950">Market Insights</span>
+              <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-4 rounded-full shadow-lg">
+                <TrendingUp className="text-mint-gray" size={24} />
+                <span className="font-lato font-bold text-lg text-slate-950">Market Insights</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Users className="text-periwinkle-blue" size={20} />
-                <span className="font-lato font-medium text-slate-950">Trusted by 150+ Artists</span>
+              <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-4 rounded-full shadow-lg">
+                <Users className="text-periwinkle-blue" size={24} />
+                <span className="font-lato font-bold text-lg text-slate-950">Trusted by 150+ Artists</span>
               </div>
             </div>
           </div>
@@ -44,52 +48,38 @@ const Index = () => {
       {/* Main Application */}
       <section className="py-8 px-4 sm:px-6 lg:px-8 bg-[#fff4e0]">
         <div className="max-w-7xl mx-auto bg-[t#FFF4E0] bg-sky-50">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Left Column - Upload & Calculator */}
             <div className="space-y-8">
               <div className="animate-slide-up">
                 <ArtworkUpload onArtworkChange={setArtwork} />
               </div>
               <div className="animate-slide-up" style={{
-              animationDelay: '0.1s'
-            }}>
+                animationDelay: '0.1s'
+              }}>
                 <ValuationCalculator onValuationChange={setValuation} />
               </div>
             </div>
 
             {/* Right Column - Pricing Breakdown */}
             <div className="animate-slide-up" style={{
-            animationDelay: '0.2s'
-          }}>
+              animationDelay: '0.2s'
+            }}>
               <PricingBreakdown valuation={valuation} />
             </div>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            {[{
-            icon: Users,
-            label: 'Active Artists',
-            value: '12,543'
-          }, {
-            icon: TrendingUp,
-            label: 'Artworks Valued',
-            value: '89,234'
-          }, {
-            icon: Award,
-            label: 'Success Rate',
-            value: '94%'
-          }, {
-            icon: Sparkles,
-            label: 'Avg. Price Increase',
-            value: '32%'
-          }].map((stat, index) => <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center hover-lift animate-fade-in" style={{
-            animationDelay: `${0.3 + index * 0.1}s`
-          }}>
-                <stat.icon className="text-blush-rose mx-auto mb-3" size={32} />
-                <div className="text-2xl font-playfair font-bold text-graphite-soft">{stat.value}</div>
-                <div className="text-sm font-lato text-gray-600">{stat.label}</div>
-              </div>)}
+          {/* Problem-Solution Section */}
+          <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-12 mb-12 animate-fade-in">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-graphite-soft mb-6">
+                Most emerging artists struggle to price their work fairly, often undervaluing their talent and missing out on rightful earnings.
+              </h2>
+              <p className="text-xl font-lato text-gray-700 leading-relaxed">
+                Our AI-powered platform analyzes market data, artistic techniques, and current trends to give you confident, 
+                data-backed pricing that reflects your art's true worth.
+              </p>
+            </div>
           </div>
 
           {/* CTA Section */}
@@ -104,6 +94,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
