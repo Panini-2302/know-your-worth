@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import ArtworkUpload from '@/components/ArtworkUpload';
@@ -6,13 +5,10 @@ import ValuationCalculator from '@/components/ValuationCalculator';
 import PricingBreakdown from '@/components/PricingBreakdown';
 import { Sparkles, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Index = () => {
   const [artwork, setArtwork] = useState(null);
   const [valuation, setValuation] = useState(null);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
+  return <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
       <Header />
       
       {/* Hero Section */}
@@ -55,16 +51,16 @@ const Index = () => {
                 <ArtworkUpload onArtworkChange={setArtwork} />
               </div>
               <div className="animate-slide-up" style={{
-                animationDelay: '0.1s'
-              }}>
+              animationDelay: '0.1s'
+            }}>
                 <ValuationCalculator onValuationChange={setValuation} />
               </div>
             </div>
 
             {/* Right Column - Pricing Breakdown */}
             <div className="animate-slide-up" style={{
-              animationDelay: '0.2s'
-            }}>
+            animationDelay: '0.2s'
+          }}>
               <PricingBreakdown valuation={valuation} />
             </div>
           </div>
@@ -85,17 +81,13 @@ const Index = () => {
           {/* CTA Section */}
           <div className="text-center bg-gradient-to-r from-blush-rose to-periwinkle-blue rounded-2xl p-8 text-white">
             <h2 className="text-3xl font-playfair font-bold mb-4">Ready to Price Like a Pro?</h2>
-            <p className="text-lg font-lato mb-6 opacity-90">
-              Join thousands of artists who've discovered their true worth
-            </p>
+            <p className="text-lg font-lato mb-6 opacity-90">Join other artists who've discovered their true worth</p>
             <Button size="lg" className="bg-white text-blush-rose hover:bg-gray-100 font-lato font-semibold px-8 py-3">
               Start Your Free Analysis
             </Button>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
