@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { BookOpen, Award, Clock, Users, Star, Play, CheckCircle, Lightbulb, Target, TrendingUp, DollarSign } from 'lucide-react';
+import { BookOpen, Award, Clock, Users, Star, Play, CheckCircle, Lightbulb, Target, TrendingUp, DollarSign, Image, ShoppingBag, MessageSquare, Upload, Instagram } from 'lucide-react';
+
 const Learn = () => {
   const modules = [{
     id: 1,
@@ -57,6 +58,68 @@ const Learn = () => {
     earned: false,
     description: 'Help 5 fellow artists'
   }];
+  const resourceHub = [
+    {
+      id: 1,
+      title: 'How to Price Your Art (With Examples)',
+      description: 'Real pricing strategies with step-by-step examples from successful artists',
+      icon: DollarSign,
+      readTime: '8 min read',
+      category: 'Pricing',
+      color: 'bg-emerald-50 border-emerald-200',
+      iconColor: 'text-emerald-600'
+    },
+    {
+      id: 2,
+      title: 'What Buyers Actually Look For',
+      description: 'Inside insights on what makes collectors and buyers choose specific artworks',
+      icon: Target,
+      readTime: '6 min read',
+      category: 'Market',
+      color: 'bg-blue-50 border-blue-200',
+      iconColor: 'text-blue-600'
+    },
+    {
+      id: 3,
+      title: 'How to Handle Custom Requests',
+      description: 'Navigate commissions, custom work, and client expectations like a pro',
+      icon: MessageSquare,
+      readTime: '10 min read',
+      category: 'Business',
+      color: 'bg-purple-50 border-purple-200',
+      iconColor: 'text-purple-600'
+    },
+    {
+      id: 4,
+      title: 'Checklist Before You Upload Your Art Online',
+      description: 'Essential preparation steps to maximize your online art sales',
+      icon: Upload,
+      readTime: '5 min read',
+      category: 'Digital',
+      color: 'bg-orange-50 border-orange-200',
+      iconColor: 'text-orange-600'
+    },
+    {
+      id: 5,
+      title: 'Instagram vs Etsy vs Gallery – Where Should You Sell?',
+      description: 'Compare platforms and find the best fit for your art style and goals',
+      icon: ShoppingBag,
+      readTime: '12 min read',
+      category: 'Platforms',
+      color: 'bg-pink-50 border-pink-200',
+      iconColor: 'text-pink-600'
+    },
+    {
+      id: 6,
+      title: 'Building Your Artist Brand on Social Media',
+      description: 'Authentic strategies to grow your following and connect with buyers',
+      icon: Instagram,
+      readTime: '9 min read',
+      category: 'Marketing',
+      color: 'bg-indigo-50 border-indigo-200',
+      iconColor: 'text-indigo-600'
+    }
+  ];
   const quickTips = [{
     title: 'Research Your Market',
     content: 'Study similar artists and their pricing to understand your position',
@@ -89,9 +152,9 @@ const Learn = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           {[{
           icon: BookOpen,
-          label: 'Modules Completed',
-          value: '2/6',
-          progress: 33
+          label: 'Resources Read',
+          value: '12/25',
+          progress: 48
         }, {
           icon: Award,
           label: 'Badges Earned',
@@ -122,53 +185,59 @@ const Learn = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Learning Modules */}
+          {/* Resource Hub */}
           <div className="lg:col-span-2 space-y-6">
             <Card>
               <CardHeader className="bg-sky-50">
                 <CardTitle className="font-playfair flex items-center gap-2">
-                  <BookOpen className="text-blush-rose" size={20} />
-                  Learning Modules
+                  <Lightbulb className="text-blush-rose" size={20} />
+                  Practical Resource Hub
                 </CardTitle>
+                <p className="text-sm text-gray-600 font-lato">
+                  Actionable guides and insights to help you succeed as an artist
+                </p>
               </CardHeader>
-              <CardContent className="bg-sky-50">
-                <div className="space-y-4">
-                  {modules.map(module => <div key={module.id} className="border rounded-lg p-4 hover:bg-gray-50 transition-colors">
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-periwinkle-blue rounded-lg flex items-center justify-center">
-                            <module.icon className="text-blush-rose" size={20} />
-                          </div>
-                          <div>
-                            <h3 className="font-lato font-semibold text-graphite-soft">{module.title}</h3>
-                            <p className="text-sm text-gray-600">{module.description}</p>
-                          </div>
+              <CardContent className="bg-sky-50 p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {resourceHub.map(resource => (
+                    <div 
+                      key={resource.id} 
+                      className={`${resource.color} border rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group hover:-translate-y-1`}
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div className={`w-12 h-12 ${resource.color.split(' ')[0]} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                          <resource.icon className={resource.iconColor} size={24} />
                         </div>
-                        <Button size="sm" className="bg-blush-rose hover:bg-blush-rose/90">
-                          <Play size={16} className="mr-1" />
-                          Continue
-                        </Button>
-                      </div>
-                      
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span className="flex items-center gap-1">
-                          <Clock size={14} />
-                          {module.duration}
-                        </span>
-                        <span>{module.lessons} lessons</span>
-                        <Badge variant="outline">
-                          {module.difficulty}
+                        <Badge variant="outline" className="text-xs">
+                          {resource.category}
                         </Badge>
                       </div>
                       
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-600">Progress</span>
-                          <span className="font-medium text-graphite-soft">{module.progress}%</span>
-                        </div>
-                        <Progress value={module.progress} className="h-2" />
+                      <h3 className="font-lato font-bold text-graphite-soft mb-2 leading-tight group-hover:text-blush-rose transition-colors">
+                        {resource.title}
+                      </h3>
+                      
+                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                        {resource.description}
+                      </p>
+                      
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-500 flex items-center gap-1">
+                          <Clock size={12} />
+                          {resource.readTime}
+                        </span>
+                        <Button size="sm" variant="ghost" className="text-blush-rose hover:bg-blush-rose/10 p-2">
+                          <Play size={14} />
+                        </Button>
                       </div>
-                    </div>)}
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-6 text-center">
+                  <Button className="bg-blush-rose hover:bg-blush-rose/90 text-white">
+                    View All Resources
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -177,7 +246,7 @@ const Learn = () => {
             <Card>
               <CardHeader className="bg-sky-50">
                 <CardTitle className="font-playfair flex items-center gap-2">
-                  <Lightbulb className="text-blush-rose" size={20} />
+                  <Star className="text-blush-rose" size={20} />
                   Quick Tips
                 </CardTitle>
               </CardHeader>
@@ -234,12 +303,12 @@ const Learn = () => {
               <CardContent className="bg-sky-50">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-lato text-graphite-soft">Lessons Completed</span>
-                    <span className="font-semibold text-graphite-soft">8</span>
+                    <span className="text-sm font-lato text-graphite-soft">Resources Read</span>
+                    <span className="font-semibold text-graphite-soft">5</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-lato text-graphite-soft">Study Time</span>
-                    <span className="font-semibold text-graphite-soft">3.5h</span>
+                    <span className="font-semibold text-graphite-soft">2.5h</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-lato text-graphite-soft">Streak</span>
@@ -272,4 +341,5 @@ const Learn = () => {
       </div>
     </div>;
 };
+
 export default Learn;
