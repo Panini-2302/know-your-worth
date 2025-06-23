@@ -125,7 +125,7 @@ const ArtworkUpload = ({
 
           <div className="space-y-2">
             <Label htmlFor="description" className="font-lato font-medium">Description</Label>
-            <Textarea id="description" placeholder="Describe your artwork, inspiration, or technique..." value={artwork.description} onChange={e => handleInputChange('description', e.target.value)} className="border-gray-300 focus:border-blush-rose min-h-[100px] bg-sky-50" />
+            <Textarea id="description" placeholder="Describe your artwork, inspiration, or technique..." value={artwork.description} onChange={e => handleInputChange('description', e.target.value)} className="border-gray-300 focus:border-slate-100 min-h-[100px] bg-sky-50" />
           </div>
         </div>
       </CardContent>
