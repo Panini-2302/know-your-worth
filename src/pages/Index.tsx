@@ -34,7 +34,7 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-4 rounded-full shadow-lg">
                 <Users className="text-periwinkle-blue" size={24} />
-                <span className="font-lato font-bold text-lg text-slate-950">Trusted by 150+ Artists</span>
+                <span className="font-lato font-bold text-lg text-slate-950">Trusted by Artists</span>
               </div>
             </div>
           </div>
