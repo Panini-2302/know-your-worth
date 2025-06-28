@@ -15,7 +15,7 @@ const Index = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in">
-            <h1 className="text-4xl font-playfair font-bold text-graphite-soft mb-6 text-slate-950 md:text-7xl">
+            <h1 className="text-3xl font-playfair font-bold text-graphite-soft mb-6 text-slate-950 md:text-7xl">
               Price Your Art with
               <span className="bg-gradient-to-r from-blush-rose to-periwinkle-blue bg-clip-text text-transparent"> Confidence</span>
             </h1>
