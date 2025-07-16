@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom Know Your Worth colors using HSL values
-				'blush-rose': 'hsl(5 68% 90%)',
-				'mint-gray': 'hsl(130 42% 85%)',
-				'periwinkle-blue': 'hsl(216 81% 91%)',
-				'cream-beige': 'hsl(39 100% 94%)',
-				'graphite-soft': 'hsl(0 0% 23%)'
+				// Custom Know Your Worth colors
+				'blush-rose': '#F9D5D3',
+				'mint-gray': '#D8F3DC',
+				'periwinkle-blue': '#DDEBF9',
+				'cream-beige': '#FFF4E0',
+				'graphite-soft': '#3A3A3A'
 			},
 			fontFamily: {
 				'playfair': ['Playfair Display', 'serif'],
