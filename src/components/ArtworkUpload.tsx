@@ -1,4 +1,3 @@
-
 import { useState, useCallback } from 'react';
 import { Upload, Image, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,12 +5,12 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-
 interface ArtworkUploadProps {
   onArtworkChange: (artwork: any) => void;
 }
-
-const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
+const ArtworkUpload = ({
+  onArtworkChange
+}: ArtworkUploadProps) => {
   const [artwork, setArtwork] = useState({
     title: '',
     description: '',
@@ -21,17 +20,14 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
   });
   const [isDragOver, setIsDragOver] = useState(false);
   const [isUploaded, setIsUploaded] = useState(false);
-
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     setIsDragOver(true);
   }, []);
-
   const handleDragLeave = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     setIsDragOver(false);
   }, []);
-
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     setIsDragOver(false);
@@ -41,10 +37,9 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
       handleImageUpload(imageFile);
     }
   }, []);
-
   const handleImageUpload = (file: File) => {
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = e => {
       const newArtwork = {
         ...artwork,
         image: file,
@@ -56,7 +51,6 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
     };
     reader.readAsDataURL(file);
   };
-
   const handleInputChange = (field: string, value: string) => {
     const newArtwork = {
       ...artwork,
@@ -65,10 +59,8 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
     setArtwork(newArtwork);
     onArtworkChange(newArtwork);
   };
-
-  return (
-    <Card className="overflow-hidden hover-lift">
-      <CardContent className="p-6">
+  return <Card className="overflow-hidden hover-lift">
+      <CardContent className="p-6 bg-sky-50">
         <div className="space-y-6">
           <div className="text-center">
             <h3 className="text-xl font-playfair font-semibold text-graphite-soft mb-2">
@@ -80,71 +72,41 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
           </div>
 
           {/* Image Upload Area */}
-          <div 
-            className={`relative border-2 border-dashed rounded-xl p-8 transition-all duration-300 cursor-pointer
+          <div className={`relative border-2 border-dashed rounded-xl p-8 transition-all duration-300 cursor-pointer
               ${isDragOver ? 'border-blush-rose bg-blush-rose/5' : 'border-gray-300 hover:border-blush-rose hover:bg-gray-50'}
-              ${isUploaded ? 'border-green-500 bg-green-50' : ''}`}
-            onDragOver={handleDragOver}
-            onDragLeave={handleDragLeave}
-            onDrop={handleDrop}
-            onClick={() => document.getElementById('image-upload')?.click()}
-          >
-            {artwork.imagePreview ? (
-              <div className="relative">
-                <img 
-                  src={artwork.imagePreview} 
-                  alt="Artwork preview" 
-                  className="w-full h-48 object-cover rounded-lg" 
-                />
+              ${isUploaded ? 'border-green-500 bg-green-50' : ''}`} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop} onClick={() => document.getElementById('image-upload')?.click()}>
+            {artwork.imagePreview ? <div className="relative">
+                <img src={artwork.imagePreview} alt="Artwork preview" className="w-full h-48 object-cover rounded-lg" />
                 <div className="absolute top-2 right-2 bg-green-500 text-white p-1 rounded-full">
                   <CheckCircle size={16} />
                 </div>
-              </div>
-            ) : (
-              <div className="text-center">
+              </div> : <div className="text-center">
                 <div className="mx-auto w-12 h-12 bg-gradient-to-br from-blush-rose to-periwinkle-blue rounded-full flex items-center justify-center mb-4">
-                  {isUploaded ? (
-                    <CheckCircle className="text-white" size={24} />
-                  ) : (
-                    <Upload className="text-white" size={24} />
-                  )}
+                  {isUploaded ? <CheckCircle className="text-white" size={24} /> : <Upload className="text-white" size={24} />}
                 </div>
                 <p className="text-lg font-lato font-medium text-gray-700 mb-2">
                   {isDragOver ? 'Drop your artwork here' : 'Drag & drop your artwork'}
                 </p>
                 <p className="text-sm text-gray-500">or click to browse files</p>
                 <p className="text-xs text-gray-400 mt-2">PNG, JPG, JPEG up to 10MB</p>
-              </div>
-            )}
+              </div>}
             
-            <input 
-              id="image-upload" 
-              type="file" 
-              accept="image/*" 
-              className="hidden" 
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) handleImageUpload(file);
-              }} 
-            />
+            <input id="image-upload" type="file" accept="image/*" className="hidden" onChange={e => {
+            const file = e.target.files?.[0];
+            if (file) handleImageUpload(file);
+          }} />
           </div>
 
           {/* Artwork Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="title" className="font-lato font-medium">Artwork Title</Label>
-              <Input 
-                id="title" 
-                placeholder="Enter artwork title" 
-                value={artwork.title}
-                onChange={(e) => handleInputChange('title', e.target.value)}
-                className="border-gray-300 focus:border-blush-rose"
-              />
+              <Input id="title" placeholder="Enter artwork title" value={artwork.title} onChange={e => handleInputChange('title', e.target.value)} className="border-gray-300 focus:border-blush-rose bg-red-100" />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="style" className="font-lato font-medium">Art Style</Label>
-              <Select onValueChange={(value) => handleInputChange('style', value)}>
+              <Select onValueChange={value => handleInputChange('style', value)}>
                 <SelectTrigger className="border-gray-300 focus:border-blush-rose">
                   <SelectValue placeholder="Select style" />
                 </SelectTrigger>
@@ -163,18 +125,10 @@ const ArtworkUpload = ({ onArtworkChange }: ArtworkUploadProps) => {
 
           <div className="space-y-2">
             <Label htmlFor="description" className="font-lato font-medium">Description</Label>
-            <Textarea 
-              id="description" 
-              placeholder="Describe your artwork, inspiration, or technique..." 
-              value={artwork.description}
-              onChange={(e) => handleInputChange('description', e.target.value)}
-              className="border-gray-300 focus:border-blush-rose min-h-[100px]"
-            />
+            <Textarea id="description" placeholder="Describe your artwork, inspiration, or technique..." value={artwork.description} onChange={e => handleInputChange('description', e.target.value)} className="border-gray-300 focus:border-blush-rose min-h-[100px] bg-red-100" />
           </div>
         </div>
       </CardContent>
-    </Card>
-  );
+    </Card>;
 };
-
 export default ArtworkUpload;
