@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from '@/components/Header';
 import ArtworkUpload from '@/components/ArtworkUpload';
@@ -6,13 +5,10 @@ import ValuationCalculator from '@/components/ValuationCalculator';
 import PricingBreakdown from '@/components/PricingBreakdown';
 import { Sparkles, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Index = () => {
   const [artwork, setArtwork] = useState(null);
   const [valuation, setValuation] = useState(null);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
+  return <div className="min-h-screen bg-gradient-to-br from-cream-beige via-white to-periwinkle-blue/30">
       <Header />
       
       {/* Hero Section */}
@@ -54,13 +50,17 @@ const Index = () => {
               <div className="animate-slide-up">
                 <ArtworkUpload onArtworkChange={setArtwork} />
               </div>
-              <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <div className="animate-slide-up" style={{
+              animationDelay: '0.1s'
+            }}>
                 <ValuationCalculator onValuationChange={setValuation} />
               </div>
             </div>
 
             {/* Right Column - Pricing Breakdown */}
-            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-slide-up" style={{
+            animationDelay: '0.2s'
+          }}>
               <PricingBreakdown valuation={valuation} />
             </div>
           </div>
@@ -90,7 +90,7 @@ const Index = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-sky-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-graphite-soft mb-6">
             About Us
@@ -100,8 +100,6 @@ const Index = () => {
           </p>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
