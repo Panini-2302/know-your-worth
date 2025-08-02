@@ -88,6 +88,18 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* About Us Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-graphite-soft mb-6">
+            About Us
+          </h2>
+          <p className="text-xl font-lato text-graphite-soft/80 leading-relaxed">
+            Panini Rao is the founder of Know Your Worth and a passionate changemaker dedicated to helping people recognize their true value.
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
