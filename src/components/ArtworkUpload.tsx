@@ -107,7 +107,7 @@ const ArtworkUpload = ({
             <div className="space-y-2">
               <Label htmlFor="style" className="font-lato font-medium">Art Style</Label>
               <Select onValueChange={value => handleInputChange('style', value)}>
-                <SelectTrigger className="border-gray-300 focus:border-blush-rose">
+                <SelectTrigger className="border-gray-300 focus:border-blush-rose bg-red-100">
                   <SelectValue placeholder="Select style" />
                 </SelectTrigger>
                 <SelectContent>
