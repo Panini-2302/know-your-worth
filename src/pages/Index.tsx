@@ -5,15 +5,15 @@ import ValuationCalculator from '@/components/ValuationCalculator';
 import PricingBreakdown from '@/components/PricingBreakdown';
 import { Sparkles, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import artistHands1 from '@/assets/artist-hands1.jpg';
+import artistHands2 from '@/assets/artist-hands2.jpg';
+import easelPainting from '@/assets/easel-painting.jpg';
+import potteryHands from '@/assets/pottery-hands.jpg';
+import canvasWork from '@/assets/canvas-work.jpg';
+import artStudio from '@/assets/art-studio.jpg';
 import painting1 from '@/assets/painting1.jpg';
 import sculpture1 from '@/assets/sculpture1.jpg';
 import pottery1 from '@/assets/pottery1.jpg';
-import textile1 from '@/assets/textile1.jpg';
-import painting2 from '@/assets/painting2.jpg';
-import sculpture2 from '@/assets/sculpture2.jpg';
-import pottery2 from '@/assets/pottery2.jpg';
-import textile2 from '@/assets/textile2.jpg';
-import painting3 from '@/assets/painting3.jpg';
 const Index = () => {
   const [artwork, setArtwork] = useState(null);
   const [valuation, setValuation] = useState(null);
@@ -24,98 +24,113 @@ const Index = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-20">
           <div className="animate-fade-in relative">
-            {/* Artwork Grid Background - positioned behind headline only */}
-            <div className="absolute inset-0 -top-8 bottom-1/2">
-              {/* Semi-transparent white overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/80 to-white/75 z-10"></div>
+            {/* Clean Grid Background - positioned behind headline and subtext only */}
+            <div className="absolute inset-0 -top-4 h-80">
+              {/* Light white overlay for text readability */}
+              <div className="absolute inset-0 bg-white/60 z-10"></div>
               
-              {/* 3x3 Grid of artworks */}
-              <div className="absolute inset-0 opacity-15">
-                <div className="grid grid-cols-3 gap-4 h-full w-full p-8">
+              {/* 3x4 Clean Grid of artworks */}
+              <div className="absolute inset-0 opacity-18">
+                <div className="grid grid-cols-4 grid-rows-3 gap-2 h-full w-full">
                   {/* Row 1 */}
                   <div 
-                    className="rounded-lg shadow-sm"
+                    className="bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(${artistHands1})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                  <div 
+                    className="bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(${easelPainting})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                  <div 
+                    className="bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(${potteryHands})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                  <div 
+                    className="bg-cover bg-center"
                     style={{
                       backgroundImage: `url(${painting1})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
-                    }}
-                  />
-                  <div 
-                    className="rounded-lg shadow-sm"
-                    style={{
-                      backgroundImage: `url(${sculpture1})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
-                    }}
-                  />
-                  <div 
-                    className="rounded-lg shadow-sm"
-                    style={{
-                      backgroundImage: `url(${pottery1})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
+                      backgroundPosition: 'center'
                     }}
                   />
                   
                   {/* Row 2 */}
                   <div 
-                    className="rounded-lg shadow-sm"
+                    className="bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${textile1})`,
+                      backgroundImage: `url(${canvasWork})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
+                      backgroundPosition: 'center'
                     }}
                   />
                   <div 
-                    className="rounded-lg shadow-sm"
+                    className="bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${painting2})`,
+                      backgroundImage: `url(${sculpture1})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
+                      backgroundPosition: 'center'
                     }}
                   />
                   <div 
-                    className="rounded-lg shadow-sm"
+                    className="bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${sculpture2})`,
+                      backgroundImage: `url(${artistHands2})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                  <div 
+                    className="bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(${pottery1})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
                     }}
                   />
                   
                   {/* Row 3 */}
                   <div 
-                    className="rounded-lg shadow-sm"
+                    className="bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${pottery2})`,
+                      backgroundImage: `url(${artStudio})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
+                      backgroundPosition: 'center'
                     }}
                   />
                   <div 
-                    className="rounded-lg shadow-sm"
+                    className="bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${textile2})`,
+                      backgroundImage: `url(${painting1})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
+                      backgroundPosition: 'center'
                     }}
                   />
                   <div 
-                    className="rounded-lg shadow-sm"
+                    className="bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${painting3})`,
+                      backgroundImage: `url(${potteryHands})`,
                       backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'blur(2px) saturate(0.6) brightness(1.1)'
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                  <div 
+                    className="bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(${canvasWork})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
                     }}
                   />
                 </div>
