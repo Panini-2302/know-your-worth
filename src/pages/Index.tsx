@@ -5,11 +5,11 @@ import ValuationCalculator from '@/components/ValuationCalculator';
 import PricingBreakdown from '@/components/PricingBreakdown';
 import { Sparkles, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import artwork1 from '@/assets/artwork1.jpg';
-import artwork2 from '@/assets/artwork2.jpg';
-import artwork3 from '@/assets/artwork3.jpg';
-import artwork4 from '@/assets/artwork4.jpg';
-import artwork5 from '@/assets/artwork5.jpg';
+import realArt1 from '@/assets/real-art1.jpg';
+import realArt2 from '@/assets/real-art2.jpg';
+import realArt3 from '@/assets/real-art3.jpg';
+import realArt4 from '@/assets/real-art4.jpg';
+import realArt5 from '@/assets/real-art5.jpg';
 const Index = () => {
   const [artwork, setArtwork] = useState(null);
   const [valuation, setValuation] = useState(null);
@@ -19,54 +19,70 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Artwork Collage Background */}
-        <div className="absolute inset-0 opacity-15">
-          <div 
-            className="absolute top-10 left-10 w-48 h-36 rounded-2xl transform rotate-12"
-            style={{
-              backgroundImage: `url(${artwork1})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(0.5px)'
-            }}
-          />
-          <div 
-            className="absolute top-20 right-16 w-32 h-48 rounded-2xl transform -rotate-6"
-            style={{
-              backgroundImage: `url(${artwork2})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(0.5px)'
-            }}
-          />
-          <div 
-            className="absolute bottom-32 left-1/4 w-40 h-40 rounded-2xl transform rotate-45"
-            style={{
-              backgroundImage: `url(${artwork3})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(0.5px)'
-            }}
-          />
-          <div 
-            className="absolute bottom-20 right-1/4 w-36 h-36 rounded-2xl transform -rotate-12"
-            style={{
-              backgroundImage: `url(${artwork4})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(0.5px)'
-            }}
-          />
-          <div 
-            className="absolute top-1/2 left-1/2 w-48 h-32 rounded-2xl transform -translate-x-1/2 -translate-y-1/2 rotate-6"
-            style={{
-              backgroundImage: `url(${artwork5})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(0.5px)'
-            }}
-          />
+        <div className="absolute inset-0">
+          {/* Semi-transparent white overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/85 to-white/80 z-10"></div>
+          
+          {/* Art pieces positioned throughout the background */}
+          <div className="absolute inset-0 opacity-12">
+            <div 
+              className="absolute top-10 left-10 w-56 h-40 rounded-2xl transform rotate-12 shadow-lg"
+              style={{
+                backgroundImage: `url(${realArt1})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(1px) saturate(0.7) brightness(1.1)'
+              }}
+            />
+            <div 
+              className="absolute top-20 right-16 w-40 h-56 rounded-2xl transform -rotate-6 shadow-lg"
+              style={{
+                backgroundImage: `url(${realArt2})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(1px) saturate(0.7) brightness(1.1)'
+              }}
+            />
+            <div 
+              className="absolute bottom-32 left-1/4 w-48 h-48 rounded-2xl transform rotate-45 shadow-lg"
+              style={{
+                backgroundImage: `url(${realArt3})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(1px) saturate(0.7) brightness(1.1)'
+              }}
+            />
+            <div 
+              className="absolute bottom-20 right-1/4 w-44 h-44 rounded-2xl transform -rotate-12 shadow-lg"
+              style={{
+                backgroundImage: `url(${realArt4})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(1px) saturate(0.7) brightness(1.1)'
+              }}
+            />
+            <div 
+              className="absolute top-1/2 left-1/2 w-52 h-36 rounded-2xl transform -translate-x-1/2 -translate-y-1/2 rotate-6 shadow-lg"
+              style={{
+                backgroundImage: `url(${realArt5})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(1px) saturate(0.7) brightness(1.1)'
+              }}
+            />
+            {/* Additional smaller art pieces for richness */}
+            <div 
+              className="absolute top-40 left-1/3 w-32 h-24 rounded-xl transform -rotate-15 shadow-md"
+              style={{
+                backgroundImage: `url(${realArt1})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(1.5px) saturate(0.6) brightness(1.2)'
+              }}
+            />
+          </div>
         </div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
+        <div className="max-w-7xl mx-auto text-center relative z-20">
           <div className="animate-fade-in">
             <h1 className="text-3xl font-playfair font-bold text-graphite-soft mb-6 md:text-7xl">
               Price Your Art with
