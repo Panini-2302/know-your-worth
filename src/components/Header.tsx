@@ -8,7 +8,7 @@ import { useAuth } from '@/hooks/useAuth';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const { user, signOut } = useAuth();
+  const { user, signOut, loading } = useAuth();
 
   const menuItems = [{
     icon: Upload,
@@ -31,7 +31,8 @@ const Header = () => {
   }];
 
   const handleNavigation = (path: string, isProtected?: boolean) => {
-    if (isProtected && !user) {
+    // Only redirect to auth if protected route AND we're certain user is not authenticated
+    if (isProtected && !loading && !user) {
       navigate('/auth');
     } else {
       navigate(path);
